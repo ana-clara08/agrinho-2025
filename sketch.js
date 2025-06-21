@@ -73,7 +73,7 @@ let falaAtual3_5 = 0;
 // Variáveis para Fase 4
 let verduras = [];
 let verdurasColhidas = 0;
-let cestoVerduras = { x: 400, y: 500, width: 80, height: 60 }; // Cesto mais para baixo (y: 500)
+let cestoVerduras = { x: 400, y: 500, width: 80, height: 60 };
 let arrastandoVerdura = null;
 
 // Variáveis para Fase Final
@@ -90,32 +90,35 @@ let mostrarFim = false;
 
 function preload() {
   try {
-    imgColegio = loadImage('Colégio.jpg');
-    imgAgrinho = loadImage('AGRINHO.jpg');
-    imgCity = loadImage('CITY.jpg');
-    imgFeira = loadImage('FEIRA.jpg');
-    imgMaria = loadImage('maria.png');
-    imgJoaquim = loadImage('joaquim.png');
-    imgGarrafa = loadImage('garrafa.png');
-    imgCasca = loadImage('casca.png');
-    imgCesto = loadImage('cesto.png');
-    imgMariaCaminhao = loadImage('marianocaminhão.png');
-    imgCampo1 = loadImage('campo1.png');
-    imgCampoPost = loadImage('campo1(PostparaInstagram).png');
-    imgPapel = loadImage('papel.png');
-    imgCaminho = loadImage('caminho.png');
-    imgVas = loadImage('vas.png');
-    imgVerd = loadImage('verdura.png');
+    // Imagens (todos os caminhos em minúsculas)
+    imgColegio = loadImage('assets/colégio.jpg');
+    imgAgrinho = loadImage('assets/agrinho.jpg');
+    imgCity = loadImage('assets/city.jpg');
+    imgFeira = loadImage('assets/feira.png');
+    imgMaria = loadImage('assets/maria.png');
+    imgJoaquim = loadImage('assets/joaquim.png');
+    imgGarrafa = loadImage('assets/garrafa.png');
+    imgCasca = loadImage('assets/casca.png');
+    imgCesto = loadImage('assets/cesto.png');
+    imgMariaCaminhao = loadImage('assets/marianocaminhão.png');
+    imgCampo1 = loadImage('assets/campo1.png');
+    imgCampoPost = loadImage('assets/campo1(postparainstagram).png');
+    imgPapel = loadImage('assets/papel.png');
+    imgCaminho = loadImage('assets/caminho.png');
+    imgVas = loadImage('assets/vas.png');
+    imgVerd = loadImage('assets/verdura.png');
     
-    // Carrega os sons
-    musicaCampoliga = loadSound('campoliga.mp3');
-    somCaminhao = loadSound('car.mp3');
-    somFestejando = loadSound('Cone.mp3');
+    // Sons (todos os caminhos em minúsculas)
+    musicaCampoliga = loadSound('assets/campoliga.mp3');
+    somCaminhao = loadSound('assets/car.mp3');
+    somFestejando = loadSound('assets/cone.mp3');
 
-    videoCampo = createVideo(['campo2.mp4', 'campo2.webm'], () => {
+    // Vídeo
+    videoCampo = createVideo(['assets/campo2.mp4'], () => {
       videoCarregado = true;
     });
 
+    // Configura objetos que caem na fase 2
     objetoTipos[0].img = imgGarrafa;
     objetoTipos[1].img = imgCasca;
     objetoTipos[2].img = imgPapel;
@@ -126,7 +129,6 @@ function preload() {
     erroCarregamento = 'Erro ao carregar recursos do jogo';
   }
 }
-
 function setup() {
   createCanvas(800, 600);
   textFont('Arial');
